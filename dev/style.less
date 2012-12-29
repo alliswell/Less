@@ -105,8 +105,7 @@ License: GNU General Public License
 body,
 button,
 input,
-select,
-textarea {
+select {
 	padding: 0;
 	background: @site-bg;
 	font-family: @body-font;
@@ -416,13 +415,21 @@ h3#comments {
 	
 	.comment {
 		margin: 0 0 @margin 50px;
-		padding-bottom: 20px;
-		border-bottom: 1px solid @border-color;
+		padding: 20px;
 		position: relative;
-	}
+		list-style: none;
+		-moz-box-shadow: 0 0 3px rgba(0,0,0,0.2);
+		-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.2);
+		box-shadow: 0 0 3px rgba(0,0,0,0.2);
+		
+		.children {
+			margin-top: @margin;
+		}
+	}//comment
 	
 	.comment-author {
-		font-size: (@body-text-size - 4);
+		float: left;
+		margin-right: 10px;
 		
 		img {
 			position: absolute;
@@ -437,7 +444,7 @@ h3#comments {
 	}// comment-author
 
 	.comment-meta {
-		font-size: (@body-text-size - 4);
+		font-size: (@body-text-size - 6);
 		margin-bottom: 10px;
 	}
 	

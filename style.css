@@ -319,7 +319,7 @@ textarea {
   overflow: auto;
   /* Removes default vertical scrollbar in IE6/7/8/9 */
 
-  padding-left: 3px;
+  padding: 10px;
   vertical-align: top;
   /* Improves readability and alignment in all browsers */
 
@@ -330,8 +330,7 @@ textarea {
 body,
 button,
 input,
-select,
-textarea {
+select {
   padding: 0;
   background: #ffffff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -606,12 +605,19 @@ h3#comments {
 }
 .commentlist .comment {
   margin: 0 0 40px 50px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #dddddd;
+  padding: 20px;
   position: relative;
+  list-style: none;
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.commentlist .comment .children {
+  margin-top: 40px;
 }
 .commentlist .comment-author {
-  font-size: 14px;
+  float: left;
+  margin-right: 10px;
 }
 .commentlist .comment-author img {
   position: absolute;
@@ -622,7 +628,7 @@ h3#comments {
   display: none;
 }
 .commentlist .comment-meta {
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 10px;
 }
 #respond {
