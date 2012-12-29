@@ -1,0 +1,539 @@
+/*
+Theme Name: Less
+Theme URI: http://lessmade.com/themes/less
+Author: Jared Erickson
+Author URI: http://jarederickson.com
+Description: A super simple theme that can be customized using LESS variables
+Version: 1.0
+License: GNU General Public License
+
+*/
+
+/* LESS variables - Change the look of your site simply.
+-------------------------------------------------------------- */
+
+	// Site Colors
+	// -----------------------
+	
+	// Main
+	@primary:			#343434;
+	@secondary:			#007998;
+	
+	// Shades
+	@dark:				#101010;
+	@grey:				#565656;
+	@light-grey:		#888888;
+	@off-white:			#f8f8f8;
+	
+	// Site background
+	@site-bg:			#fff;
+	
+	// Header background
+	@header-bg:			transparent;
+	
+	// Post Background
+	@post-bg:			transparent;
+	
+	// Footer background
+	@footer-bg:			#ffffff;
+	
+	// Border colors
+	@border-color:		#dddddd;
+	
+	
+	
+	// Typography
+	// ----------------------
+	
+	// if you want to use a webfont from gooogle or something
+	@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+	
+	// Body Font family
+	@body-font:		"Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+	// Heading font family
+	@heading-font:	"Arvo", Georgia, serif;
+	
+	// Site name size
+	@site-text-size:	16px;
+	
+	// Body text size
+	@body-text-size:	18px;
+	
+	// Title text size
+	@title-text-size:	38px;
+	
+	// Site name color
+	@site-name-color:	@grey;
+	
+	// Site heading color
+	@headinng-color:	#404040;
+	
+	// Site Text color
+	@text-color:		#787878;	
+	
+	// Link colors
+	@link-color:		@secondary;
+	
+	
+	
+	// Site Structure
+	// ---------------------
+	
+	// Header padding
+	@header-padding:	20px 0;
+	
+	// main Wrapper width (effects your post width)
+	@container:			720px;
+	
+	// post/article padding
+	@post-padding:		0;
+	
+	// footer width
+	@footer-width:		100%;
+	
+	// Margin (used for top or bottom of most elements
+	@margin:			40px;
+	
+
+@import "reset";
+
+
+/* styles
+-------------------------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+	padding: 0;
+	background: @site-bg;
+	font-family: @body-font;
+	.font-size(@body-text-size);
+}
+
+
+/* typography
+-------------------------------------------------------------- */
+
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: @heading-font;
+}
+
+h1 {
+	.font-size(48px);
+}
+
+h2 {
+	.font-size(34px);
+}
+
+h3 {
+	.font-size(28px);
+}
+
+h4 {
+	.font-size(18px);
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/* Text elements */
+p {
+	margin-bottom: 1.5em;
+}
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	overflow: auto;
+	max-width: 100%;
+}
+
+
+/* Links */
+a {
+	color: @link-color;
+	.transition(color);
+	text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: fade(@link-color, 50%);
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+
+/* Header
+-------------------------------------------------------------- */
+
+
+header {
+	padding: @header-padding;
+	background: @header-bg;
+	margin: 20px auto;
+	
+	.gravatar {
+		overflow: hidden;
+		width: 100px;
+		height: 100px;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+		margin: 0;
+		float: right;
+	}
+		
+	hgroup {
+		float: left;
+		width: 80%;
+		margin-top: 22px;
+		
+		h1 {
+			font-family: @body-font;
+			font-weight: 900;
+			color: @site-name-color;
+			.font-size(@site-text-size);
+			margin: 0;
+			padding: 0;
+			text-transform: uppercase;
+						
+			a {
+				color: @site-name-color;
+				text-decoration: none;
+				
+				&:hover {
+				}
+			} //a
+			
+			span {
+				font-weight: 200;
+				color: @light-grey;
+				text-transform: lowercase;
+			}
+			
+		}// h1
+		
+	}// hgroup
+	
+	nav {
+		float: left;
+		
+			ul {
+				list-style: none;
+				margin: 0;
+				
+				li {
+					float: left;
+					margin: 2px 10px 0 0;
+					
+					a {
+						color: @light-grey;
+						font-size: 14px;
+					}
+				}
+			} // ul
+		
+	}// nav
+	
+}// header
+
+.container {
+	max-width: @container;
+	padding: 20px;
+	margin: 0 auto;
+	position: relative;
+}// wrapper
+
+/* Posts/Articles
+-------------------------------------------------------------- */
+
+article {
+	background: @post-bg;
+	padding: @post-padding;
+	margin-bottom: 80px;
+	border-bottom: 1px solid @border-color;
+	
+	.title {
+		color: @headinng-color;
+		.font-size(@title-text-size);
+		font-weight: 700;
+		
+		a {
+			text-decoration: none;
+			color: @headinng-color;
+			
+			&:hover {
+				color: @secondary;
+			}
+		}// a
+		
+	}// title
+	
+	.post-meta {
+		margin-bottom:  @margin;
+		font-size: 14px;
+		
+		a {
+			color: @light-grey;
+			text-decoration: none;
+			
+			&:hover {
+				color: fade(@light-grey, 50%);
+			}
+		}
+		
+	}
+	
+	.the-content {
+
+		a {
+			font-weight: 900;
+			text-decoration: none;
+		}
+	
+		p {
+			color: @text-color;
+		}
+		
+		img, embed, iframe {
+			width: 100%;
+			height: auto;
+		}
+		
+	}// the-content
+	
+	.post-categories {
+		list-style: none;
+		margin: 0 0 10px 0;
+		
+			li {
+				.font-size(10px);
+				text-transform: uppercase;
+				letter-spacing: .9px;
+				display: inline-block;
+				margin-right: 10px;
+			}
+		
+	}
+	
+	
+}//article
+
+/* Pagination */
+#pagination {
+	margin-bottom: @margin;
+	width: 100%;
+	
+	.past-page {
+		float: right;
+	}
+	
+	.next-page {
+		float: left;
+	}
+	
+}// pagination
+
+
+/* Comments */
+
+h3#comments {
+	margin-bottom: ( @margin * 2);
+	font-size: (@body-text-size - 2px);
+}
+
+.commentlist {
+	list-style: none;
+	margin: 0;
+	
+	.comment {
+		margin: 0 0 @margin 50px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid @border-color;
+		position: relative;
+	}
+	
+	.comment-author {
+		font-size: (@body-text-size - 4);
+		
+		img {
+			position: absolute;
+			left: -50px;
+			top: 5px;
+		}
+		
+		.says {
+			display: none;
+		}
+		
+	}// comment-author
+
+	.comment-meta {
+		font-size: (@body-text-size - 4);
+		margin-bottom: 10px;
+	}
+	
+	
+	
+	
+}
+
+#respond {
+	margin-bottom: (@margin * 2);
+	
+	> h3 {
+		font-size: (@body-text-size - 2px);
+		margin-bottom: 20px;
+	}
+	
+	form label {
+		color: @light-grey;
+	}
+	
+}// respond
+
+footer {
+	text-align: center;
+	padding-bottom: 40px;
+	font-size: 12px;
+	
+}// footer
+
+
+/* Misc & mixens
+-------------------------------------------------------------- */
+
+.hide-text {
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+.clear {
+	clear: both;
+}
+
+/* clear floats */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+.font-size(@size){
+	@rem-value: (@size / 10);
+	@px-value: @size;
+	@lineHeight: (@size * 1.48);
+	line-height: @lineHeight;
+	font-size: ~"@{px-value}px"; 
+	font-size: ~"@{rem-value}rem";
+}
+
+.transition(@kind: all, @time: .25s, @ease: ease-in-out) {
+	-webkit-transition: @kind @time @ease;
+	-moz-transition: @kind @time @ease;
+	-o-transition: @kind @time @ease;
+	-ms-transition: @kind @time @ease;
+	transition: @kind @time @ease;
+}
+
+/* Media Queries for responsivenessssssss
+-------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+	
+	header {
+		padding: 0;
+		
+		.gravatar {
+			float: none;
+		}
+	}//header
+	
+} // max-width 767px
+
+
+
