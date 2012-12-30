@@ -2,7 +2,8 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
+<title><?php bloginfo('name'); ?> | <?php if( is_home() ) : echo bloginfo( 'description' ); endif; ?><?php wp_title( '', true ); ?></title>
+
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
@@ -45,17 +46,18 @@
 
 <div class="container">
 
+	<div id="primary">
+		<div id="content" role="main">
+
+
 <?php
 	/*-----------------------------------------------------------------------------------*/
 	/* Start Home loop
 	/*-----------------------------------------------------------------------------------*/
 	
-	if( is_home() ) {
+	if( is_home() || is_archive() ) {
 	
 ?>
-		<div id="primary">
-			<div id="content" role="main">
-
 			<?php if ( have_posts() ) : ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -105,8 +107,6 @@
 
 			<?php endif; ?>
 
-			</div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
 		
 	<?php } //end is_home(); ?>
 
@@ -115,12 +115,9 @@
 	/* Start Single loop
 	/*-----------------------------------------------------------------------------------*/
 	
-	if( is_single() || is_archive() ) {
+	if( is_single() ) {
 ?>
 
-	
-		<div id="primary">
-			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -163,8 +160,6 @@
 
 			<?php endif; ?>
 
-			</div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
 
 	<?php } //end is_single(); ?>
 	
@@ -175,24 +170,54 @@
 	
 	if( is_page()) {
 ?>
+
+			<?php if ( have_posts() ) : ?>
+
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<article class="post">
+					
+						<h1 class="title"><?php the_title() ?></h1>
+						
+						<div class="the-content">
+							<?php the_content(); ?>
+							
+							<?php wp_link_pages(); ?>
+						</div><!-- the-content -->
+						
+					</article>
+
+				<?php endwhile; ?>
+
+			<?php else : ?>
+				
+				<article class="post error">
+					<h1 class="404">Nothing posted yet</h1>
+				</article>
+
+			<?php endif; ?>
+
 	<?php } // end is_page(); ?>
+
+			</div><!-- #content .site-content -->
+		</div><!-- #primary .content-area -->
+
+</div><!-- / container-->
+
 <?php
 	/*-----------------------------------------------------------------------------------*/
 	/* Start Footer
 	/*-----------------------------------------------------------------------------------*/
 ?>
 
-</div><!-- / container-->
-
-	<footer class="site-footer" role="contentinfo">
-		<div class="site-info container">
-			<?php do_action( 'break_credits' ); ?>
-			<a href="http://wordpress.org/" title="A Semantic Personal Publishing Platform" rel="generator">Proudly powered by WordPress</a>
-			<span class="sep"> and </span>
-			<a href="http://lessmade.com/themes/less" rel="theme">LESS</a> by <a href="http://jarederickson.com" rel="designer">Jared Erickson</a>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon .site-footer -->
-</div><!-- #page .hfeed .site -->
+<footer class="site-footer" role="contentinfo">
+	<div class="site-info container">
+		<?php do_action( 'break_credits' ); ?>
+		<a href="http://wordpress.org/" title="A Semantic Personal Publishing Platform" rel="generator">Proudly powered by WordPress</a>
+		<span class="sep"> and </span>
+		<a href="http://lessmade.com/themes/less" rel="theme">LESS</a> by <a href="http://jarederickson.com" rel="designer">Jared Erickson</a>
+	</div><!-- .site-info -->
+</footer><!-- #colophon .site-footer -->
 
 <?php wp_footer(); ?>
 

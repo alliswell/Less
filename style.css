@@ -120,9 +120,8 @@ section {
   display: block;
 }
 html {
-  overflow-y: scroll;
-  /* Keeps page centred in all browsers regardless of content height */
-
+  margin: 0;
+  padding: 0;
   font-size: 62.5%;
   /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 
@@ -332,6 +331,7 @@ button,
 input,
 select {
   padding: 0;
+  margin: 0;
   background: #ffffff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 26.64px;
@@ -583,6 +583,13 @@ article .post-categories li {
   display: inline-block;
   margin-right: 10px;
 }
+/* Page loop styling */
+.page article {
+  border-bottom: none;
+}
+.page article .title {
+  margin-bottom: 40px;
+}
 /* Pagination */
 #pagination {
   margin-bottom: 40px;
@@ -627,9 +634,14 @@ h3#comments {
 .commentlist .comment-author .says {
   display: none;
 }
-.commentlist .comment-meta {
+.comment-meta {
   font-size: 12px;
   margin-bottom: 10px;
+}
+.comment-subscription-form,
+.comment-subscription-form {
+  margin-bottom: 0;
+  font-size: 14px;
 }
 #respond {
   margin-bottom: 80px;
@@ -648,6 +660,12 @@ footer {
 }
 /* Misc & mixens
 -------------------------------------------------------------- */
+/* Jetpack Gallery */.gallery .gallery-item {
+  margin-top: 0 !important;
+}
+.gallery img {
+  border: none !important;
+}
 .hide-text {
   overflow: hidden;
   text-indent: 100%;
@@ -682,5 +700,8 @@ html[xmlns] .clearfix {
   }
   header .gravatar {
     float: none;
+  }
+  header hgroup {
+    width: 100%;
   }
 }

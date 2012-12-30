@@ -107,6 +107,7 @@ button,
 input,
 select {
 	padding: 0;
+	margin: 0;
 	background: @site-bg;
 	font-family: @body-font;
 	.font-size(@body-text-size);
@@ -381,10 +382,21 @@ article {
 				margin-right: 10px;
 			}
 		
-	}
-	
+	}// post-categories
 	
 }//article
+
+/* Page loop styling */
+
+.page article {
+	border-bottom: none;
+	
+	.title {
+		margin-bottom: @margin;
+	}
+	
+}// .page article
+
 
 /* Pagination */
 #pagination {
@@ -442,15 +454,19 @@ h3#comments {
 		}
 		
 	}// comment-author
+	
+}//commentlist
 
-	.comment-meta {
-		font-size: (@body-text-size - 6);
-		margin-bottom: 10px;
-	}
-	
-	
-	
-	
+// Jetpack 
+
+.comment-meta {
+	font-size: (@body-text-size - 6);
+	margin-bottom: 10px;
+}
+
+.comment-subscription-form, .comment-subscription-form {
+	margin-bottom: 0;
+	font-size: ( @body-text-size - 4px);
 }
 
 #respond {
@@ -477,6 +493,20 @@ footer {
 
 /* Misc & mixens
 -------------------------------------------------------------- */
+
+
+/* Jetpack Gallery */ 
+
+.gallery {
+
+	.gallery-item {
+		margin-top: 0 !important;
+	}
+	
+	img {
+		border: none !important;
+	}
+}
 
 .hide-text {
 	overflow: hidden;
@@ -538,6 +568,11 @@ html[xmlns] .clearfix {
 		.gravatar {
 			float: none;
 		}
+		
+		hgroup {
+			width: 100%;
+		}
+		
 	}//header
 	
 } // max-width 767px
