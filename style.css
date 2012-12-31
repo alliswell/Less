@@ -478,12 +478,12 @@ header .gravatar {
   margin: 0;
   float: right;
 }
-header hgroup {
+header #brand {
   float: left;
   width: 80%;
   margin-top: 22px;
 }
-header hgroup h1 {
+header #brand h1 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
   color: #565656;
@@ -494,11 +494,11 @@ header hgroup h1 {
   padding: 0;
   text-transform: uppercase;
 }
-header hgroup h1 a {
+header #brand h1 a {
   color: #565656;
   text-decoration: none;
 }
-header hgroup h1 span {
+header #brand h1 span {
   font-weight: 200;
   color: #888888;
   text-transform: lowercase;
