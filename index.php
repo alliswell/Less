@@ -9,6 +9,19 @@
 
 <?php wp_head(); ?>
 
+
+<script type="text/javascript">
+ 
+ // fitvids to make all videos full width http://fitvidsjs.com/
+ (function ($) {  
+  
+	  $(document).ready(function() {
+	    $(".the-content").fitVids();
+	  });
+	  
+  })(jQuery);
+</script>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -199,8 +212,8 @@
 
 	<?php } // end is_page(); ?>
 
-			</div><!-- #content .site-content -->
-		</div><!-- #primary .content-area -->
+		</div><!-- #content .site-content -->
+	</div><!-- #primary .content-area -->
 
 </div><!-- / container-->
 

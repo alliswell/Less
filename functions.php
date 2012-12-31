@@ -18,14 +18,21 @@ register_nav_menus( array(
 /* Enque Styles and scripts
 /*-----------------------------------------------------------------------------------*/
 
-function less_styles()  { 
+function less_scripts()  { 
 
-  wp_register_style( 'less-style', get_template_directory_uri() . '/style.css', '10000', 'all' );
-  wp_enqueue_style( 'less-style' );
+	// theme styles
+	wp_register_style( 'less-style', get_template_directory_uri() . '/style.css', '10000', 'all' );
+	wp_enqueue_style( 'less-style' );
+	
+	// include jquery
+	wp_enqueue_script( 'jquery' );
+		
+	// add fitvid
+	wp_enqueue_script( 'less-fitvid', get_template_directory_uri() . '/js/jquery.fitvids.js', array(), '1.0', true );
+	
   
 }
-add_action('wp_enqueue_scripts', 'Less_styles');
-
+add_action('wp_enqueue_scripts', 'less_scripts');
 
 
 ?>
