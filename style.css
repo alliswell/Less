@@ -568,16 +568,21 @@ article .the-content img {
   width: 100%;
   height: auto;
 }
-article .post-categories {
-  list-style: none;
-  margin: 0 0 10px 0;
-}
-article .post-categories li {
+article .meta {
   line-height: 14.8px;
   font-size: 10px;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .9px;
+}
+article .meta div {
+  float: left;
+}
+article .meta .post-categories {
+  list-style: none;
+  margin: 0 0 10px 0;
+}
+article .meta .post-categories li {
   display: inline-block;
   margin-right: 10px;
 }

@@ -1,7 +1,7 @@
 <?php
 
 // Define the version as a constant so we can easily replace it throughout the theme
-define( 'LESS_VERSION', 1.0 );
+define( 'LESS_VERSION', 1.1 );
 
 /*-----------------------------------------------------------------------------------*/
 /* Add Rss to Head
