@@ -359,6 +359,7 @@ h2 {
   line-height: 50.32px;
   font-size: 34px;
   font-size: 3.4rem;
+  padding-bottom: 15px;
 }
 h3 {
   line-height: 41.44px;
@@ -556,6 +557,9 @@ article .post-meta a {
 }
 article .post-meta a:hover {
   color: rgba(136, 136, 136, 0.5);
+}
+article .the-content {
+  color: #787878;
 }
 article .the-content a {
   font-weight: 900;
