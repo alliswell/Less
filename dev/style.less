@@ -55,13 +55,13 @@ License: GNU General Public License
 	@heading-font:	"Arvo", Georgia, serif;
 	
 	// Site name size
-	@site-text-size:	16px;
+	@site-text-size:	16;
 	
 	// Body text size
-	@body-text-size:	18px;
+	@body-text-size:	18;
 	
 	// Title text size
-	@title-text-size:	38px;
+	@title-text-size:	38;
 	
 	// Site name color
 	@site-name-color:	@grey;
@@ -130,19 +130,19 @@ h6 {
 }
 
 h1 {
-	.font-size(48px);
+	.font-size(48);
 }
 
 h2 {
-	.font-size(34px);
+	.font-size(34);
 }
 
 h3 {
-	.font-size(28px);
+	.font-size(28);
 }
 
 h4 {
-	.font-size(18px);
+	.font-size(18);
 }
 
 hr {
@@ -372,7 +372,7 @@ article {
 	}// the-content
 	
 	.meta {	
-		.font-size(10px);
+		.font-size(10);
 		text-transform: uppercase;
 		letter-spacing: .9px;
 		
@@ -469,7 +469,7 @@ h3#comments {
 // Jetpack 
 
 .comment-meta {
-	font-size: (@body-text-size - 6);
+	font-size: (@body-text-size - 6px);
 	margin-bottom: 10px;
 }
 
@@ -553,7 +553,7 @@ html[xmlns] .clearfix {
 	@rem-value: (@size / 10);
 	@px-value: @size;
 	@lineHeight: (@size * 1.48);
-	line-height: @lineHeight;
+	line-height: @lineHeight+0px;
 	font-size: ~"@{px-value}px"; 
 	font-size: ~"@{rem-value}rem";
 }
