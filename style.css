@@ -669,7 +669,7 @@ footer {
   font-weight: bold;
   margin: 0 0 15px 0px;
   font-size: 1.3em;
-  color: #3F403D;
+  color: #565656;
 }
 .social-button-container {
   margin: 15px 0 15px;
@@ -698,6 +698,9 @@ SocialCustomMenu a:visited {
 .scmPinterest {
   background-color: #cb2027;
   border: solid 1px #c1c1c1;
+}
+.subscribe {
+  color: #565656;
 }
 /* Misc & mixens
 -------------------------------------------------------------- */

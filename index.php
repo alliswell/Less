@@ -102,7 +102,7 @@ get_header();
                             </div>
                         </div>
 
-                        <p style="padding-top: 15px"><strong>Abonnez-vous à la Newsletter</strong> pour être automatiquement tenu au courant des nouveautés !</p>
+                        <p style="padding-top: 15px" class="subscribe"><strong>Abonnez-vous à la Newsletter</strong> pour être automatiquement tenu au courant des nouveautés !</p>
                         <?php $widgetNL = new WYSIJA_NL_Widget(true);
                         echo $widgetNL->widget(array('form' => 1, 'form_type' => 'php')); ?>
 
