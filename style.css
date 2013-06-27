@@ -664,6 +664,41 @@ footer {
   padding-bottom: 40px;
   font-size: 12px;
 }
+/* custom social sharing buttons */
+.share_top_text {
+  font-weight: bold;
+  margin: 0 0 15px 0px;
+  font-size: 1.3em;
+  color: #3F403D;
+}
+.social-button-container {
+  margin: 15px 0 15px;
+  border-bottom: none;
+}
+.SocialCustomMenu a,
+SocialCustomMenu a:visited {
+  display: inline;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95em;
+}
+.scmTwitter {
+  background-color: #7cd5fd;
+  border: solid 1px #c1c1c1;
+}
+.scmFacebook {
+  background-color: #45619d;
+  border: solid 1px #c1c1c1;
+}
+.scmGoogleplus {
+  background-color: #af291d;
+  border: solid 1px #c1c1c1;
+}
+.scmPinterest {
+  background-color: #cb2027;
+  border: solid 1px #c1c1c1;
+}
 /* Misc & mixens
 -------------------------------------------------------------- */
 /* Jetpack Gallery */.gallery .gallery-item {
