@@ -359,6 +359,7 @@ h2 {
   line-height: 50.32px;
   font-size: 34px;
   font-size: 3.4rem;
+  padding-bottom: 15px;
 }
 h3 {
   line-height: 41.44px;
@@ -557,6 +558,9 @@ article .post-meta a {
 article .post-meta a:hover {
   color: rgba(136, 136, 136, 0.5);
 }
+article .the-content {
+  color: #787878;
+}
 article .the-content a {
   font-weight: 900;
   text-decoration: none;
@@ -565,7 +569,6 @@ article .the-content p {
   color: #787878;
 }
 article .the-content img {
-  width: 100%;
   height: auto;
 }
 article .meta {
@@ -660,6 +663,44 @@ footer {
   text-align: center;
   padding-bottom: 40px;
   font-size: 12px;
+}
+/* custom social sharing buttons */
+.share_top_text {
+  font-weight: bold;
+  margin: 0 0 15px 0px;
+  font-size: 1.3em;
+  color: #565656;
+}
+.social-button-container {
+  margin: 15px 0 15px;
+  border-bottom: none;
+}
+.SocialCustomMenu a,
+SocialCustomMenu a:visited {
+  display: inline;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95em;
+}
+.scmTwitter {
+  background-color: #7cd5fd;
+  border: solid 1px #c1c1c1;
+}
+.scmFacebook {
+  background-color: #45619d;
+  border: solid 1px #c1c1c1;
+}
+.scmGoogleplus {
+  background-color: #af291d;
+  border: solid 1px #c1c1c1;
+}
+.scmPinterest {
+  background-color: #cb2027;
+  border: solid 1px #c1c1c1;
+}
+.subscribe {
+  color: #565656;
 }
 /* Misc & mixens
 -------------------------------------------------------------- */
