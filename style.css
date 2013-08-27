@@ -505,6 +505,7 @@ header #brand h1 span {
 }
 header nav {
   float: left;
+  margin-top: 10px;
 }
 header nav ul {
   list-style: none;
