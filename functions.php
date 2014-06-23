@@ -19,7 +19,7 @@ register_nav_menus(
 );
 
 /*-----------------------------------------------------------------------------------*/
-/* Enque Styles and Scripts
+/* Enqueue Styles and Scripts
 /*-----------------------------------------------------------------------------------*/
 
 function less_scripts()  { 
@@ -35,3 +35,15 @@ function less_scripts()  {
   
 }
 add_action( 'wp_enqueue_scripts', 'less_scripts' );
+
+/*-----------------------------------------------------------------------------------*/
+/* Load google fonts
+/*-----------------------------------------------------------------------------------*/
+
+add_action('wp_print_styles', 'load_fonts');
+function load_fonts() {
+
+	wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Arvo:400,700');
+	wp_enqueue_style( 'googleFonts');
+
+}
