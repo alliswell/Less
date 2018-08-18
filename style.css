@@ -564,6 +564,9 @@ article .the-content a {
 article .the-content p {
   color: #787878;
 }
+article .the-content li {
+  color: #787878;
+}
 article .the-content img {
   width: 100%;
   height: auto;
