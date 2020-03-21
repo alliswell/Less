@@ -1,16 +1,42 @@
-Less
-====
+博客基于wordpress，主题基于[alliswell](https://github.com/alliswell)/**[Less](https://github.com/alliswell/Less)**修改
 
-A simple minimal WordPress theme built with only what is needed to survive
+------
 
-![Less screenshot](https://github.com/alliswell/Less/blob/master/dev/less-screenshot.png?raw=true)
+# 修改记录
 
-Less is a super minimal theme, both front end and back end. adding no bloat whatesover. It only uses the minimum requirements that WordPress has, a stylesheet, screenshot and the index page. 
+## 首页
 
-I did use LESS (http://lesscss.org/) for all the styles, if you know how to use it you will be able to change a few viarables to customize the site with no problem!
+### 头部
 
-We also used JSLint'ed JavaScript to make sure it's the squeky-cleanest JavaScript your brain can imagine. It's also minified using [JSMin](http://www.crockford.com/javascript/jsmin.html) so it's small, but if you like reading minified JavaScript, then this is just for you.
+修改了博客名字大小及颜色
 
-Finally, the theme has been localized so if you dislike English or want to read these posts in another language, you can translate it!
+### 中部
 
-![Code Screenshot](https://github.com/alliswell/Less/blob/master/dev/less-screen-code.png?raw=true)
+不显示文章全部内容，只显示部分摘要
+
+```php
+<div class="the-content">
+<?php the_content( 'Continue...' ); ?>
+</div><!-- the-content -->
+```
+
+改为
+
+```php
+<div class="the-content">
+<?php
+    if(!is_single()) {
+        the_excerpt();
+    } else {
+        the_content(__('(more…)'));
+    } 
+; ?>
+<?php wp_link_pages(); ?>
+</div><!-- the-content -->
+```
+
+[引用](http://www.seo628.com/2551.html)
+
+## 底部
+
+将内容修改为版权&备案信息
