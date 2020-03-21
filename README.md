@@ -1,4 +1,4 @@
-博客基于wordpress，主题基于[alliswell](https://github.com/alliswell)/**[Less](https://github.com/alliswell/Less)**修改
+博客基于wordpress，主题基于[alliswell](https://github.com/alliswell)/[Less](https://github.com/alliswell/Less)修改
 
 ------
 
